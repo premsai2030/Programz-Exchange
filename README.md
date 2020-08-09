@@ -13,19 +13,22 @@ it is containing two parts
 
  ![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/login.png)
  
- Home Page
+# Home Page
  
 ![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/home%20page.png) 
 
 
-Public page
+# Public page
+
 ![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/public.png) 
 
 
 
-private page
+# Private page
+
 ![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/private.png) 
 
 
-public python page
+# Public python page
+
 ![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/python.png) 
