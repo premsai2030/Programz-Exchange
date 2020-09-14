@@ -6,7 +6,7 @@ if($username==true){
 }
 else
 {
-	header('location:http://localhost/programz-website/');
+	header('location:http://programz-exchange.epizy.com/');
 }
  ?>
  <!DOCTYPE html>
@@ -24,6 +24,7 @@ else
  </head>
  <body>
  	<style type="text/css">
+     
  		@media only screen and (max-width: 700px){
 #close{
 	display: none;
@@ -67,62 +68,116 @@ else{
 
  	</nav>
  	<br><br>
- <div class="container">
- 	<div class="row">
- 		<div class="col-lg-6">
- 			<center>
- 				<h3>Login </h3>
- 				<hr style="border-bottom: solid black;">
- 				<div style="width: 100%" >
- 					<a href="PUBLIC" class="btn btn-outline-danger" style="margin-bottom: 30px;">LOGIN TO MAIN PAGE</a>
- 				</div>
-<div style="width: 100%" >
- 					<a href="PRIVATE" class="btn btn-outline-primary" style="margin-bottom: 30px;">ENTER INTO ROOM</a>
- 				</div>
- 			</center>
- 			
-
- 		</div>
- 		<div class="col-lg-6">
- 			<center>
- 				<h3><span >< </span>PROGRAMS<span> /></span></h3>
- 				<hr style="border-bottom: solid black;">
- 				<table>
- 				<tr>
- 					<a href="JAVA" class="btn  btn-outline-amber waves-effect " style="margin-right: 30px;width: 150px;margin-bottom: 20px;">JAVA</a>
- 				</tr>
- 				<tr>
- 					<a class="btn  btn-outline-elegant waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">PYTHON</a>
- 				</tr>
- 				
- 				<tr>
- 					<a class="btn  btn-outline-info waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">BASIC C</a>
- 				</tr>
- 				<tr>
- 					<a class="btn  btn-outline-cyan waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">C ++</a>
- 				</tr>
- 				<tr>
- 					<a class="btn  btn-outline-light-green waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">AURDINO</a>
- 				</tr>
- 				<tr>
- 					<a class="btn  btn-outline-dark-green waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">RASPBERRY</a>
- 				</tr>
- 			
-
-
- 			</table>
- 			</center>
- 		</div>
- 	</div>
- 	<div class="row" style="margin-top: 20px;">
- 		<div class="col-sm-3">
- 		</div>
- 		<div class="col-sm-6">
- 			 				<center><a href="http://localhost/programz-website/LOGOUT" class="btn  btn-outline-primary waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">LOG OUT</a></center>	
- 		</div>
- 		<div class="col-sm-3">
- 		</div>
- 	</div>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="public.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">PUBLIC</h5>
+    <p class="card-text">Here you can see all programs of your's and you can post your own programs of any programming language .</p>
+    <a href="PUBLIC" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+        <br>
+  <img class="card-img-top" src="private.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="margin-top: 10px;">PRIVATE</h5>
+    <p class="card-text">Here you can create your own private rooms for chit - chat or for feedback rooms .</p>
+    <a href="PRIVATE" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/java.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">JAVA</h5>
+    <p class="card-text">Whoever published programs on <b>Java</b> will be appearing here .</p>
+    <a href="JAVA" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+  </div>
+  <!----------------------------------------------------------------row2------------------------>
+  <div class="row">
+    <div class="col-sm-4">
+     <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/python.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">PYTHON</h5>
+    <p class="card-text">Whoever published programs on <b>Python</b> will be appearing here .</p>
+    <a href="PYTHON" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/aurdino.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="margin-top: 10px;">AURDINO</h5>
+    <p class="card-text">Whoever published programs on <b>Aurdino</b> will be appearing here .</p>
+    <a href="AURDINO" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/rasberry.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">RASPBERRY PI</h5>
+    <p class="card-text">Whoever published programs on  <b>Raspberry PI</b> will be appearing here .</p>
+    <a href="RASPBERRY" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+  </div>
+  <!--row3-->
+  <div class="row">
+    <div class="col-sm-4">
+     <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/c.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">C PROGRAMMING</h5>
+    <p class="card-text">Whoever published programs on <b>C Programming</b> will be appearing here .</p>
+    <a href="BASIC C" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="http://programz-exchange.epizy.com/cpp.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="margin-top: 10px;">CPP PROGRAMMING</h5>
+    <p class="card-text">Whoever published programs on <b>CPP Programming</b> will be appearing here .</p>
+    <a href="C++" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+    </div>
+    <!--
+    <div class="col-sm-4">
+      <div class="card" style="margin-top: 10px;">
+  <img class="card-img-top" src="java.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">JAVA</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>-->
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+              <center><a href="http://programz-exchange.epizy.com/LOGOUT" class="btn  btn-outline-primary waves-effect" style="margin-right: 30px;width: 150px;margin-bottom: 20px;">LOG OUT</a></center>  
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
  </div>
  </body>
  </html>
