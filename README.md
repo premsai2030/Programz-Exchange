@@ -21,7 +21,7 @@
  
 # Home Page
  
-![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/home%20page.png) 
+![](https://github.com/premsai2030/Programz-Exchange/blob/master/pics/Home.png) 
 
 
 # Public page
