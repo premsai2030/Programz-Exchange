@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include 'HOME/connection/all_data.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@ span{
   </div>
   <div class="col-sm-6 ">
     <center>
-                <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+                <img src="<?php echo $image_link ;?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
     </center>
     
@@ -130,7 +131,7 @@ if(isset($_POST['login_btn']))
 
 
   // connect to database
-  $db = mysqli_connect('localhost', 'root', 'premsai2030', 'programz_exchange');
+  $db = mysqli_connect('localhost', 'root', '', 'programz_exchange');
 $errors   = array(); 
 global $db ;
 if(!$db)

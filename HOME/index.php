@@ -1,13 +1,6 @@
 <?php 
-session_start();
-$username=$_SESSION["username"];
-if($username==true){
-
-}
-else
-{
-	header('location:http://programz-exchange.epizy.com/');
-}
+include 'connection/db.php';
+include 'connection/all_data.php' ;
  ?>
  <!DOCTYPE html>
  <html>
@@ -46,7 +39,7 @@ else
  	</div>
  	<div class="col-sm-6 ">
  		<center>
- 			 			    <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+ 			 			    <img src="<?php echo $image_link ;?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
  		</center>
     
@@ -83,7 +76,7 @@ else{
             <div class="card">
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/PUBLIC">
-                            <img src="http://programz-exchange.epizy.com/public.jpeg" style="margin: 10px;width:120px;"">
+                            <img src="<?php echo $image_link ;?>pu.jpg" style="margin: 10px;width:120px;"">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Public</b></p>
                     </center>
@@ -93,7 +86,7 @@ else{
                 <div class="card">
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/PRIVATE">
-                            <img src="http://programz-exchange.epizy.com/private.jpeg" style="margin: 10px;width:120px;"">
+                            <img src="<?php echo $image_link ;?>pr.jpg" style="margin: 10px;width:120px;"">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Private</b></p>
                     </center>
@@ -103,7 +96,7 @@ else{
                 <div class="card">
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/JAVA">
-                            <img src="http://programz-exchange.epizy.com/java.jpeg" style="margin: 10px;width:120px;"">
+                            <img src="<?php echo $image_link ;?>j.jpg" style="margin: 10px;width:120px;"">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Java</b></p>
                     </center>
@@ -113,7 +106,7 @@ else{
                 <div class="card">
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/PYTHON">
-                            <img src="http://programz-exchange.epizy.com/python.jpeg" style="margin: 10px;width:120px;"">
+                            <img src="<?php echo $image_link ;?>p.jpg" style="margin: 10px;width:120px;"">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Python</b></p>
                     </center>
@@ -125,7 +118,7 @@ else{
                 <div class="card">
                         <center>
                             <a href="http://programz-exchange.epizy.com/HOME/ARDUINO">
-                                <img src="http://programz-exchange.epizy.com/aurdino.jpeg" style="margin: 10px;width:120px;">
+                                <img src="<?php echo $image_link ;?>a.jpg" style="margin: 10px;width:120px;">
                             </a>
                             <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Arduino</b></p>
                         </center>
@@ -135,7 +128,7 @@ else{
                     <div class="card">
                         <center>
                             <a href="http://programz-exchange.epizy.com/HOME/RASPBERRY">
-                                <img src="http://programz-exchange.epizy.com/rasberry.jpeg" style="margin: 10px;width:120px;">
+                                <img src="<?php echo $image_link ;?>r.jpg" style="margin: 10px;width:120px;">
                             </a>
                             <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Raspberry Pi</b></p>
                         </center>
@@ -145,7 +138,7 @@ else{
                     <div class="card">
                         <center>
                             <a href="http://programz-exchange.epizy.com/HOME/BASIC C">
-                                <img src="http://programz-exchange.epizy.com/c.jpeg" style="margin: 10px;width:120px;">
+                                <img src="<?php echo $image_link ;?>c.jpg" style="margin: 10px;width:120px;">
                             </a>
                             <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Basic-C</b></p>
                         </center>
@@ -155,7 +148,7 @@ else{
                     <div class="card">
                         <center>
                             <a href="http://programz-exchange.epizy.com/HOME/C++">
-                                <img src="http://programz-exchange.epizy.com/cpp.jpeg" style="margin: 10px;width:120px;">
+                                <img src="<?php echo $image_link ;?>cpp.jpg" style="margin: 10px;width:120px;">
                             </a>
                             <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>CPP</b></p>
                         </center>
@@ -167,7 +160,7 @@ else{
             <div class="card" >
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/Front End">
-                            <img src="http://programz-exchange.epizy.com/front.png" style="margin: 30px 0px;width:150px;">
+                            <img src="<?php echo $image_link ;?>front.png" style="margin: 30px 0px;width:150px;">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Front end</b></p>
                     </center>
@@ -177,7 +170,7 @@ else{
                 <div class="card">
                     <center>
                         <a href="http://programz-exchange.epizy.com/HOME/Back End">
-                            <img src="rev.png" style="margin: 10px;height:100px;width:120px;"">
+                            <img src="<?php echo $image_link ;?>back.png" style="margin: 10px;height:100px;width:120px;"">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Back End</b></p>
                     </center>
@@ -187,7 +180,7 @@ else{
                 <div class="card">
                     <center>
                         <a href="#">
-                            <img src="http://programz-exchange.epizy.com/art.jpeg" style="margin: 10px;width:150px;height:100px;">
+                            <img src="<?php echo $image_link ;?>art.jpeg" style="margin: 10px;width:150px;height:100px;">
                         </a>
                         <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Articles</b></p>
                     </center>
