@@ -4,7 +4,7 @@
 include '../connection/db.php' ;
 
 // Query to fetch the programs which are based on Arduino
-$sql="SELECT * FROM create_questions WHERE category='C++' ORDER BY id DESC";
+$sql="SELECT * FROM create_questions WHERE category='AURDINO' ORDER BY id DESC";
 $result=mysqli_query($db,$sql);
 
 

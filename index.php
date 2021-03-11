@@ -140,12 +140,6 @@ echo "connection failed";
 }
 $username=$_POST['username'];
 $password1=$_POST['password1'];
-if($username=="premsai2030" && $password1=="kancherla@2030")
-{
-  header('location: admin.php');
-
-  
-}
 
 $query = "SELECT * FROM users WHERE username='$username'  LIMIT 1";
 

@@ -2,16 +2,8 @@
 
 
 <?php 
-session_start();
-$username=$_SESSION["username"];
-if($username==true){
-
-}
-else
-{
-	header('location:http://localhost/programz-website/');
-}
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
+include '../connection/db.php';
+include '../connection/all_data.php' ;
 $id=$_GET["id"];
 $sql="SELECT * FROM create_room WHERE id='$id' LIMIT 1 ";
 $result=mysqli_query($db,$sql);
@@ -59,7 +51,7 @@ font-size: 10px;
   <div class="row">
   <div class="col-sm-3">
     <center>
-                <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+                <img src="<?php echo $image_link; ?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
     </center>
   </div>
@@ -122,19 +114,7 @@ elseif($hour>=17){
   <div class="input-group mb-3">
 <textarea class="form-control" style="resize: both; " rows="3" placeholder="Description " name="description" ><?php echo $row["description"]; ?></textarea>
 </div>
- <label ><b><h4>Select Language :</h4></b><small>By Default It takes "JAVA"</small></label>
 
-<div class="form-group">
-  <select class="form-control" id="exampleFormControlSelect1" name="category">
-  	<option><?php echo $row["category"]; ?></option>
-      <option>JAVA</option>
-      <option>PYTHON</option>
-      <option>BASIC C</option>
-      <option>C++</option>
-      <option>AURDINO</option>
-      <option>RASPBERRY</option>
-      </select>
-  </div>
  <label ><b><h4>Source Code :</h4></b></label>
   <div class="input-group mb-3">
 <textarea class="form-control" style="resize: both; " rows="10" placeholder="Source code" name="source_code" ><?php echo $row["source_code"]; ?></textarea>

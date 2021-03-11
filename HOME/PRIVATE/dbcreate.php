@@ -1,8 +1,5 @@
 <?php 
-error_reporting(0);
-session_start();
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
-
+include '../connection/db.php' ;
 if (isset($_POST["submit"])) {
 	date_default_timezone_set('Asia/Kolkata');
 	$username=$_SESSION["username"];
@@ -12,9 +9,9 @@ if (isset($_POST["submit"])) {
 	$category=$_POST["category"];
 	$source_code=$_POST["source_code"];
 	$time1=date("d-m-y");
-	$sql="INSERT INTO create_room(username,title,pass,description,category,source_code,time1) VALUES('$username','$title','$pass','$description','$category','$source_code','$time1')";
+	$sql="INSERT INTO create_room(username,title,pass,description,source_code,time1) VALUES('$username','$title','$pass','$description','$source_code','$time1')";
 if (mysqli_query($db,$sql)) {
-	header('location :http://localhost/programz-website/HOME/PUBLIC/');
+	header('location :http://localhost/programz-exchange/HOME/PUBLIC/');
 }
 else{
 	echo "some problem has occured";

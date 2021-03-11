@@ -1,18 +1,11 @@
  <?php 
-error_reporting(0);
-session_start();
+include '../connection/db.php' ;
+include '../connection/all_data.php' ;
 $where="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"] ;
 $username=$_SESSION["username"];
 $title=$_GET["title"];
 $pass=$_GET["pass"];
-if($username==true){
 
-}
-else if($user==NULL)
-{
-	header('location:http://localhost/programz-website/');
-}
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
 $sql="SELECT *FROM create_room WHERE title='$title' AND pass='$pass' LIMIT 1";
 $res=mysqli_query($db,$sql);
 $num=mysqli_num_rows($res);
@@ -64,7 +57,7 @@ font-size: 10px;
  	<div class="row">
  	<div class="col-sm-3">
  		<center>
- 			 			    <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+ 			 			    <img src="<?php echo $image_link; ?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
  		</center>
  	</div>

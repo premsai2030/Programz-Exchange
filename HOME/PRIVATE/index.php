@@ -1,23 +1,13 @@
 <!-----------------------------------------------private page------------------->
 
 <?php 
-error_reporting(0);
-session_start();
-$username=$_SESSION["username"];
-
-if($username==true){
-
-}
-else
-{
-	header('location:http://localhost/programz-website/');
-}
+include '../connection/db.php' ;
+include '../connection/all_data.php' ;
 $words=$_GET["words"];
 if ($words=="wrong") {
     echo "<script>alert('You Entered Wrong Username or Password')</script>";
 
 }
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
 $sql="SELECT *FROM create_room WHERE username='$username' ORDER BY id DESC ";
 $result=mysqli_query($db,$sql);
 $num=mysqli_num_rows($result);
@@ -63,7 +53,7 @@ font-size: 10px;
  	<div class="row">
  	<div class="col-sm-3">
  		<center>
- 			 			    <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+ 			 			    <img src="<?php echo $image_link; ?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
  		</center>
  	</div>
@@ -108,7 +98,7 @@ else{
  		<div class="row">
  			<div class="col-sm-6">
  				<div class="card" style="padding: 10px;margin-bottom: 10px;">
- 			<center><a href="http://localhost/programz-website/HOME/PRIVATE/CREATE"  style="text-decoration: none;"><span><i class="fa fa-plus"></i></span> <span style="font-size: 20px;">Create A Room</span></a></center>
+ 			<center><a href="http://localhost/programz-exchange/HOME/PRIVATE/create.php"  style="text-decoration: none;"><span><i class="fa fa-plus"></i></span> <span style="font-size: 20px;">Create A Room</span></a></center>
  		</div>
  			</div>
  			<div class="col-sm-6">
@@ -150,11 +140,11 @@ else{
 
    ?>	
     <div class="card" style="padding: 10px;margin-bottom: 10px;">
-      <a href="ENTER?title=<?php echo $row["title"]; ?>&pass=<?php echo $row["pass"]; ?>"  style="text-decoration: none;color: blue;"> <span style="font-size: 20px;"><?php echo $row["title"]; ?></span></a>
+      <a href="enter.php?title=<?php echo $row["title"]; ?>&pass=<?php echo $row["pass"]; ?>"  style="text-decoration: none;color: blue;"> <span style="font-size: 20px;"><?php echo $row["title"]; ?></span></a>
       <div>
         <span><b>Password :</b> <?php echo $row["pass"]; ?></span>
         <div style="padding: 10px;"> 
-          <center>          <a class="btn btn-primary" href="EDIT/?id=<?php echo $row["id"]; ?>" style="color: white;margin-right: 10px;font-size: 13px;" >Edit</a><a href="dbdelete.php?id=<?php echo $row["id"]; ?>" class="btn btn-danger" style="color: white;font-size: 13px;">Delete</a>
+          <center>          <a class="btn btn-primary" href="edit.php?id=<?php echo $row["id"]; ?>" style="color: white;margin-right: 10px;font-size: 13px;" >Edit</a><a href="dbdelete.php?id=<?php echo $row["id"]; ?>" class="btn btn-danger" style="color: white;font-size: 13px;">Delete</a>
 </center>
    <div id="<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3" style="margin-top: 10px;" 
       data-parent="#accordionEx">

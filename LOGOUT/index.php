@@ -1,6 +1,6 @@
 <?php 
 session_start();
-session_unset();
-	header('location:http://localhost/programz-website/');
+session_destroy();
+	header('location:http://localhost/programz-exchange/');
 
  ?>

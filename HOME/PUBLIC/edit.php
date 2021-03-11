@@ -1,15 +1,7 @@
 
  <?php 
-session_start();
-$username=$_SESSION["username"];
-if($username==true){
-
-}
-else
-{
-	header('location:http://localhost/programz-website/');
-}
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
+include '../connection/db.php' ;
+include '../connection/all_data.php' ;
 $id=$_GET["id"];
 $sql="SELECT * FROM create_questions WHERE id='$id' ";
 $result=mysqli_query($db,$sql);
@@ -57,7 +49,7 @@ font-size: 10px;
   <div class="row">
   <div class="col-sm-3">
     <center>
-                <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+                <img src="<?php echo $image_link; ?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
     </center>
   </div>

@@ -1,7 +1,13 @@
+<?php
+
+include '../connection/all_data.php';
+
+?>
+
 <!DOCTYPE html>
  <html>
  <head>
- 		<title>Login page</title>
+ 		<title><?php echo "Page";?></title>
  		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -54,17 +60,17 @@ font-size: 10px;
  	<div class="row">
  	<div class="col-sm-3">
  		<center>
- 			 			    <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+ 			 			    <img src="<?php echo $image_link ; ?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
  		</center>
  	</div>
  	<div class="col-sm-6 ">
- 		<a href="http://programz-exchange.epizy.com/HOME/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;margin-left:30px;color: white;">Home</a>
-<a href="http://programz-exchange.epizy.com/HOME/PUBLIC/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
+ 		<a href="<?php echo $home_url; ?>" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;margin-left:30px;color: white;">Home</a>
+<a href="<?php echo $public_url; ?>" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
 Public</a>
-<a  href="http://programz-exchange.epizy.com/HOME/PRIVATE/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
+<a  href="<?php echo $private_url; ?>" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
 Private</a>
- 		 			 						<a href="http://programz-exchange.epizy.com/LOGOUT" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">Logout
+ 		 			 						<a href="<?php echo $logout; ?>" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">Logout
 </a>
  		
  	</div>
