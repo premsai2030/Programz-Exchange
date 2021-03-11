@@ -8,6 +8,7 @@ include 'connection/all_data.php' ;
 
 <head>
     <title>Home page</title>
+    <link rel="icon" href="<?php echo $image_link ;?>logo.png" type="image/icon type">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">

@@ -6,6 +6,7 @@ include 'HOME/connection/all_data.php';
 <html>
 <head>
 	<title>Login page</title>
+  <link rel="icon" href="<?php echo $image_link ;?>logo.png" type="image/icon type">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -737,7 +738,7 @@ echo $username."not found!!!!!!!";
 exit();
 }
 
-mysql_close($db);
+mysqli_close($db);
 //if loop will completed if user is exists in database
 }
 else
