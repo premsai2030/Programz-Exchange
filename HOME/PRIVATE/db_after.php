@@ -1,5 +1,6 @@
 <?php 
 include '../connection/db.php' ;
+include '../connection/all_data.php' ;
 if (isset($_POST["submit"])) {
 	date_default_timezone_set('Asia/Kolkata');
 	$description=$_POST["description"];
