@@ -1,7 +1,6 @@
 <?php 
-session_start();
-error_reporting(0);
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
+include '../connection/db.php';
+include '../connection/all_data.php' ;
 if (isset($_POST["enter"])) {
 	$title=$_POST["title"];
 	$pass=$_POST["pass"];
@@ -11,11 +10,11 @@ if (isset($_POST["enter"])) {
 	$num=mysqli_num_rows($res);
 	if ($num==1) {
 		
-		header("location: ENTER?title=".$title."&pass=".$pass);
+		header("location: enter.php?title=".$title."&pass=".$pass);
 	}
 	else{
-		header('location:http://localhost/programz-website/HOME/PRIVATE/?words=wrong');
-
+		header('location:'.$private_url.'?words=wrong');
+		$_SESSION["p"] = "p" ;
 	}
 	
 

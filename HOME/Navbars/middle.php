@@ -1,19 +1,6 @@
-<?php 
-include '../connection/db.php';
-include '../connection/all_data.php' ;
-$sql="SELECT * FROM create_questions WHERE username='$username' ORDER BY id DESC";
-$result=mysqli_query($db,$sql);
+<br><br><br><br>
 
-include '../Navbars/headers.php' ;
-
-?>
- 	<br><br><br><br>
- 	<div class="container">
- 		
- 		<div class="card" style="padding: 10px;margin-bottom: 10px;">
- 			<center><a href="question.php" style="text-decoration: none;"><span><i class="fa fa-plus"></i></span> <span style="font-size: 20px;">Publish</span></a></center>
- 		</div>
- 			<!--Accordion wrapper-->
+  <div class="container" id="more">
 <?php 
 while ($row=mysqli_fetch_assoc($result)) {
  ?>
@@ -23,7 +10,7 @@ while ($row=mysqli_fetch_assoc($result)) {
 
   <!-- Accordion card -->
  
-  <div class="card" style="margin-top: 5px;" >
+  <div class="card blm" style="margin-top: 5px;" >
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree3" style="background-color: white">
@@ -36,15 +23,15 @@ while ($row=mysqli_fetch_assoc($result)) {
 
       </a>
 <div style="margin-top: 10px;">
-	      
+        
 <center>
-	<span ><span><a href="http://programz-exchange.epizy.com/HOME/<?php echo $row["category"]; ?>/"  class="btn btn-success" style="margin-left: 10px;font-size: 13px;"><?php echo $row["category"]; ?></a></span><a style="float:right;font-size: 25px;" class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#links<?php echo $row["id"]; ?>"
+        <span ><span style="float: left;"><b>From :</b> <?php echo $row["username"]; ?></span><a style="float:right;font-size: 25px;" class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#links<?php echo $row["id"]; ?>"
 	aria-expanded="false" aria-controls="collapseThree3"   ><i class="fa fa-share-alt" aria-hidden="true"></i>
 	</a></span>
 </center>
 </div>
     </div>
-    <div id="links<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+<div id="links<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
       data-parent="#accordionEx">
       <div class="card-body">
 
@@ -58,7 +45,8 @@ while ($row=mysqli_fetch_assoc($result)) {
     <div id="<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
       data-parent="#accordionEx">
       <div class="card-body">
-<p><?php echo str_replace("\n","<br>",$row["description"]); ?></p>
+<p><?php echo str_replace("\n","<br>",$row["description"]);
+ ?></p>
               <textarea  rows="
               <?php
               $rows= substr_count($row["source_code"],"\n") +2;
@@ -67,15 +55,9 @@ while ($row=mysqli_fetch_assoc($result)) {
               " style=" resize: none; width: 100%;" disabled="" >
 <?php echo $row["source_code"]; ?>
     </textarea>
- 		<center>
- 			<div style="padding: 10px;">
- 					<a href="edit.php?id=<?php echo $row["id"]; ?>" class="btn btn-primary" style="width: 60px;margin-right: 30px;font-size: 13px">Edit</a>
- 			<a href="post_delete.php?id=<?php echo $row["id"]; ?>&location=<?php echo "http://programz-exchange.epizy.com/HOME/PUBLIC/"; ?>" class="btn btn-danger" style="font-size: 13px;">Delete</a>
-
- 			</div>
- 	
- 		<span><b>posted on : </b><?php echo $row["time1"]; ?></span>
- 		</center>
+  <center>
+    <span> <b>posted on : </b><?php echo $row["time1"]; ?></span>
+    </center>
       </div>
    
 
@@ -85,16 +67,11 @@ while ($row=mysqli_fetch_assoc($result)) {
 </div>
 <!-- Accordion wrapper -->
 
- 		</div>
+    </div>
     <!-----------------------------------------while has to end here ------------------------------------->
     <?php 
 }
      ?>
- 	</div>
- 	<br><br><br>
-
-<!-----------------------------------------------------------------------navbar for mobile phones------------------------------------>
-<?php
-
-include '../Navbars/footer.php';
-?>
+  </div>
+  <br><br><br>
+ 

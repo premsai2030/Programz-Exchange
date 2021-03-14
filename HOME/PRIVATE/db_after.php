@@ -1,7 +1,6 @@
 <?php 
-session_start();
-error_reporting(0);
-$db=mysqli_connect('localhost','root','premsai2030','programz_exchange');
+include '../connection/db.php' ;
+include '../connection/all_data.php' ;
 if (isset($_POST["submit"])) {
 	date_default_timezone_set('Asia/Kolkata');
 	$description=$_POST["description"];

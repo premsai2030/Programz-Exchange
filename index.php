@@ -1,10 +1,12 @@
 <?php
 error_reporting(0);
+include 'HOME/connection/all_data.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login page</title>
+  <link rel="icon" href="<?php echo $image_link ;?>logo.png" type="image/icon type">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -35,7 +37,7 @@ span{
   </div>
   <div class="col-sm-6 ">
     <center>
-                <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
+                <img src="<?php echo $image_link ;?>logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
 
     </center>
     
@@ -130,7 +132,7 @@ if(isset($_POST['login_btn']))
 
 
   // connect to database
-  $db = mysqli_connect('localhost', 'root', 'premsai2030', 'programz_exchange');
+  $db = mysqli_connect('localhost', 'root', '', 'programz_exchange');
 $errors   = array(); 
 global $db ;
 if(!$db)
@@ -139,12 +141,6 @@ echo "connection failed";
 }
 $username=$_POST['username'];
 $password1=$_POST['password1'];
-if($username=="premsai2030" && $password1=="kancherla@2030")
-{
-  header('location: admin.php');
-
-  
-}
 
 $query = "SELECT * FROM users WHERE username='$username'  LIMIT 1";
 
@@ -742,7 +738,7 @@ echo $username."not found!!!!!!!";
 exit();
 }
 
-mysql_close($db);
+mysqli_close($db);
 //if loop will completed if user is exists in database
 }
 else
