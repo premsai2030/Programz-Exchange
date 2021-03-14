@@ -11,7 +11,19 @@
     left:50%;
     transform: translate(-50%, -50%);
 }
+.blm
+{
+    margin-top:20px;
+ 
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.2) , 5px 0px 30px rgba(0,0,0,0.2);
+animation-name: blm1;
+animation-duration:2s;
 
+}
+.navbar-nav
+{
+    box-shadow: 0px 2px 10px grey;
+}
 #blm1
 {
     position: fixed;
@@ -28,4 +40,12 @@
 70%{border-right:30px solid blue;border-bottom:30px solid green;border-left: 30px solid orange;}
 80%{border-bottom:30px solid green;border-left: 30px solid orange;}
 90%{border-left: 30px solid orange;}
+}
+
+
+
+@keyframes blm1 
+{
+    0%{opacity:0;margin-top:200px;}
+100%{opacity:1;}
 }

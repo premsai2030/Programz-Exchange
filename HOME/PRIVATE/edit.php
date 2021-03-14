@@ -12,7 +12,7 @@ include '../Navbars/headers.php' ;
  ?>
 
  	<br><br><br><br>
- <div class="container">
+ <div class="container" id="more">
  <div class="row">
   <nav class="nav navbar-nav " style="background-color: black;text-align: center;width: 100%;padding: 10px;">
     <a class="navbar-brand" style="color: white">Currently You Are Editing Your Room</a>

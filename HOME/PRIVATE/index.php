@@ -23,7 +23,7 @@ include '../Navbars/headers.php' ;
  
  	<br><br><br><br>
 <!--------------------------------------------------------------container starts-------------------------->
-<div class="container">
+<div class="container" id="more">
  		<div class="row">
  			<div class="col-sm-6">
  				<div class="card" style="padding: 10px;margin-bottom: 10px;">

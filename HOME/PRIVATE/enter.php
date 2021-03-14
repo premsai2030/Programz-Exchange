@@ -20,7 +20,7 @@ include '../Navbars/headers.php ';
  	<br><br><br><br>
 
 <!--------------------------------------------------------------container starts-------------------------->
-<div class="container">
+<div class="container" id="more">
 	<div class="row">
 		<nav class="nav navbar-nav justify-content-center" style="background-color:black;width: 100%;padding: 10px;">
 <center>			<a class="navbar-brand" style="color: white;">Room Created By <?php echo $row["username"]; ?></a>

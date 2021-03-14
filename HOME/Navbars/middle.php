@@ -1,6 +1,6 @@
 <br><br><br><br>
-  <div id="more">
-  <div class="container">
+
+  <div class="container" id="more">
 <?php 
 while ($row=mysqli_fetch_assoc($result)) {
  ?>
@@ -10,7 +10,7 @@ while ($row=mysqli_fetch_assoc($result)) {
 
   <!-- Accordion card -->
  
-  <div class="card" style="margin-top: 5px;" >
+  <div class="card blm" style="margin-top: 5px;" >
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree3" style="background-color: white">
@@ -74,4 +74,4 @@ while ($row=mysqli_fetch_assoc($result)) {
      ?>
   </div>
   <br><br><br>
-  </div>
+ 
