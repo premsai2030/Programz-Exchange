@@ -1,6 +1,6 @@
 # Programz-Exchange(http://programz-exchange.epizy.com)
 
-![alt text](https://github.com/premsai2030/Programz-Exchange/blob/master/logo.jpeg)
+![alt text](https://github.com/premsai2030/Programz-Exchange/blob/master/pictures/logo.jpeg)
 
 # Its open source project
 
