@@ -79,8 +79,9 @@ else{
     <br><br>
     <link rel="stylesheet" href="p.css">
     <div id="blm">
-        <center><p style="margin:auto;font-size:25px;" ><b>BLM</b></p></center>
-    </div>
+           
+        </div>  
+    <p id="blm1" ><b>Loading....</b></p>
     <div id="more">
         <div class="container">
             <div class="row">
@@ -219,6 +220,7 @@ else{
     <script type="text/javascript">
         setTimeout(() => {
                 document.getElementById("blm").style.display = "none";
+                document.getElementById("blm1").style.display = "none";
                 document.getElementById("more").style.display = "block";
             }
 

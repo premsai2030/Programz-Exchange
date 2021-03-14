@@ -30,6 +30,15 @@ Private</a>
   </div>
 </nav>
 </div>
+<script type="text/javascript">
+        setTimeout(() => {
+                document.getElementById("blm").style.display = "none";
+                document.getElementById("blm1").style.display = "none";
+                document.getElementById("more").style.display = "block";
+            }
 
+            , 2000);
+        document.getElementById("more").style.display = "none";
+    </script>
 </body>
  </html>

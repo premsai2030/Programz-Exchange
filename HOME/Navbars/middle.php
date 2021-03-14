@@ -1,4 +1,5 @@
 <br><br><br><br>
+  <div id="more">
   <div class="container">
 <?php 
 while ($row=mysqli_fetch_assoc($result)) {
@@ -73,3 +74,4 @@ while ($row=mysqli_fetch_assoc($result)) {
      ?>
   </div>
   <br><br><br>
+  </div>
