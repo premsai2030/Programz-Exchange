@@ -1,22 +1,22 @@
 <?php 
 include '../connection/db.php' ;
 include '../connection/all_data.php' ;
-if (isset($_POST["submit"])) {
+
+$json = file_get_contents('php://input');
+$prem = json_decode($json, true) ;
 	date_default_timezone_set('Asia/Kolkata');
-	$description=$_POST["description"];
-	$get_id=$_POST["get_id"];
-	$location=$_POST["location"];
+	$description=$prem["chit_chat"];
+	$get_id=$prem["get_id"];
 	$username=$_SESSION["username"];
 	$time=date("d-m-y");
 	$sql="INSERT INTO chit_chat(username,description,time,get_id) VALUES('$username','$description','$time','$get_id') ";
 if (mysqli_query($db,$sql)) {
-	header('location:'.$location);
+	echo json_encode(array("ok"=>"done")) ;
 }
 else{
 	echo "SOME PROBLEM HAS OCCURED";
 }
 
-}
 
 
  ?>

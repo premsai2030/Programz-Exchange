@@ -1,7 +1,6 @@
  <?php 
 include '../connection/db.php' ;
 include '../connection/all_data.php' ;
-$where="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"] ;
 $username=$_SESSION["username"];
 $title=$_GET["title"];
 $pass=$_GET["pass"];
@@ -17,7 +16,7 @@ include '../Navbars/headers.php ';
  ?>
 
  
- 	<br><br><br><br>
+ 	<br><br><br>
 
 <!--------------------------------------------------------------container starts-------------------------->
 <div class="container" id="more">
@@ -75,33 +74,23 @@ else{
 }
 } ?>
 <div class="card" style="width: 100%;margin-top: 20px;padding: 10px;border-bottom-color: skyblue">
-	<form  action="db_after.php" method="post">
-	<input type="text" name="location" value="<?php echo  $where; ?>" hidden >
-	<input type="text" name="get_id" value="<?php echo  $get_id; ?>" hidden >
-
+	
 	<label ><b><h5>Some Description :</h5></b></label>
   <div class="input-group mb-3">
-<textarea class="form-control" style="resize: both; " rows="3" placeholder="chit-chat" name="description" required=""></textarea><br>
+  <input value="<?php echo $get_id ;?>" id="get_id" hidden>
+<textarea class="form-control" style="resize: both; " rows="3" placeholder="chit-chat" name="description" required="" id="chit_chat"></textarea><br>
 </div>
-<center><button class="btn btn-success" type="submit" name="submit" >Submit</button></center>
+<center><button class="btn btn-success" type="submit" name="submit" onclick="upload();" >Submit</button></center>
 
-</form>
 </div>
-<?php 
-while ($row2=mysqli_fetch_assoc($res1)) {
-?>
-<div class="card" style="width: 100%;border-bottom-color: blue;padding: 10px;margin-top: 10px;"> 
-	<div><h3 style="color: grey"><?php echo $row2["username"]; ?></h3></div>
-	<div><p><?php echo $row2["description"]; ?></p></div>
-</div>
-<?php 
-}
+<div id="data" style="width: 100%;">
 
- ?>
+</div>
 <!-----------------------------row ends here------------------------------>
 	</div>
 </div>
  	<br><br><br>
+	 <script type="text/javascript" src="db.js" ></script>
 <!-----------------------------------------------------------------------navbar for mobile phones------------------------------------>
 <?php
 

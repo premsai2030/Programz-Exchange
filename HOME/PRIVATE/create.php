@@ -7,7 +7,7 @@ include '../connection/all_data.php' ;
 include '../Navbars/headers.php' ;
  ?>
 
- 	<br><br><br><br>
+ 	<br><br>
  <div class="container" id="more">
  <div class="row">
   <nav class="nav navbar-nav " style="background-color: black;text-align: center;width: 100%;padding: 10px;">

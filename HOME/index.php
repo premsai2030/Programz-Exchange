@@ -78,10 +78,7 @@ else{
     </nav>
     <br><br>
     <link rel="stylesheet" href="p.css">
-    <div id="blm">
-           
-        </div>  
-    <p id="blm1" ><b>Loading....</b></p>
+ 
     <div id="more">
         <div class="container">
             <div class="row">
@@ -217,16 +214,7 @@ else{
         </div>
     </div>
 
-    <script type="text/javascript">
-        setTimeout(() => {
-                document.getElementById("blm").style.display = "none";
-                document.getElementById("blm1").style.display = "none";
-                document.getElementById("more").style.display = "block";
-            }
-
-            , 2000);
-        document.getElementById("more").style.display = "none";
-    </script>
+    
 </body>
 
 </html>
