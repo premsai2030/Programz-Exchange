@@ -21,7 +21,7 @@ $num=mysqli_num_rows($result);
 include '../Navbars/headers.php' ;
  ?>
  
- 	<br><br><br><br>
+ 	<br><br><br>
 <!--------------------------------------------------------------container starts-------------------------->
 <div class="container" id="more">
  		<div class="row">

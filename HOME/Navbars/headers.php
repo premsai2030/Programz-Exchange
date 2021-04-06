@@ -100,7 +100,3 @@ else{
  	</div>		
  	</nav>
 	 <link rel="stylesheet" href="<?php echo $home_url; ?>p.css">
-	 <div id="blm">
-           
-        </div>  
-    <p id="blm1" ><b>Loading....</b></p>
