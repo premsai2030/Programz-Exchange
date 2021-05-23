@@ -16,7 +16,7 @@ include '../Navbars/headers.php ';
  ?>
 
  
- 	<br><br><br>
+ 	<br><br><br><br>
 
 <!--------------------------------------------------------------container starts-------------------------->
 <div class="container" id="more">
@@ -27,8 +27,10 @@ include '../Navbars/headers.php ';
 
 </center>
 		</nav>
-		<br>
-	<?php 
+	</div>
+		<div class="row">
+			<div class="col-sm-8">
+			<?php 
 if ($username==$row["username"]) {
 
 
@@ -38,42 +40,50 @@ if ($username==$row["username"]) {
 
 	} ?>
 <?php 
-if ($row["description"]=='' && $row["source_code"]=='') {
+
+	if ($row["source_code"]=='' && $row["description"]=='') {
 	?>
-	<h3 style="color: grey;margin-top: 20%;">There is nothing to SHOW</h3>
-	<?php 
-}
-else{
-	if ($row["source_code"]=='') {
-	?>
-	<div class="card" style="width:100%;padding: 10px;border-bottom-color: blue ;border-bottom-width: 2px; ">
-		<p><?php echo $row["description"]; ?></p>
-	</div>
+	
 <?php }
-else if($row["description"]==''){
+if($row["description"]!='' && $row["source_code"]!=''){
 ?>
+ <center><strong>Description</strong></center>
+<div class="card" style="width:100%;padding: 10px;border-bottom-color: blue ;border-bottom-width: 2px; ">
+		<p><?php echo $row["description"]; ?></p>
+	</div><br>
+	<center><strong>Source Code</strong></center>
 	<div class="card" style="width:100%;padding: 10px;margin-top:10px;border-bottom-color: green ;border-bottom-width: 2px; ">
-		<textarea rows="20" style="border-color: white;resize: none;" disabled=""><?php echo $row["source_code"]; ?></textarea>
+		<textarea rows="<?php echo substr_count($row["source_code"],"\n") +2 ; ?>" style="border-color: white;resize: none;" disabled=""><?php echo $row["source_code"]; ?></textarea>
 		
 	</div>
+	
 
 <?php 
 }
-
-else{
+if($row["source_code"]=='')
+{
+	
 	?>
+	<center><strong>Description</strong></center>
 	<div class="card" style="width:100%;padding: 10px;border-bottom-color: blue ;border-bottom-width: 2px; ">
 		<p><?php echo $row["description"]; ?></p>
 	</div>
-		<div class="card" style="width:100%;padding: 10px;border-bottom-color: green ;margin-top:10px;border-bottom-width: 2px; ">
-		<textarea rows="20" style="border-color: white;"><?php echo $row["source_code"]; ?></textarea>
-	</div>
-
+		
 
 	<?php 
 }
-} ?>
-<div class="card" style="width: 100%;margin-top: 20px;padding: 10px;border-bottom-color: skyblue">
+if($row["description"]=='')
+{
+ ?>
+ <center><strong>Source Code</strong></center>
+ <div class="card" style="width:100%;padding: 10px;margin-top:10px;border-bottom-color: green ;border-bottom-width: 2px; ">
+		<textarea rows="<?php echo substr_count($row["source_code"],"\n") +2 ; ?>" style="border-color: white;" disabled=""><?php echo $row["source_code"]; ?></textarea>
+		
+	</div>
+ <?php
+}
+ ?>
+<!-- <div class="card" style="width: 100%;margin-top: 20px;padding: 10px;border-bottom-color: skyblue">
 	
 	<label ><b><h5>Some Description :</h5></b></label>
   <div class="input-group mb-3">
@@ -82,15 +92,39 @@ else{
 </div>
 <center><button class="btn btn-success" type="submit" name="submit" onclick="upload();" >Submit</button></center>
 
-</div>
+</div> -->
 <div id="data" style="width: 100%;">
 
 </div>
+			</div>
+			<div class="col-sm-4">
+				<br><center><strong>Chats</strong></center>
+				<div class="card" style="height:500px;" >
+					<div class="container-fluid">
+					<div>
+					<span style="background-color:white;padding:4px;">hello</span>
+					</div>
+					<div>
+					<span style="float:right;background-color:white;padding:4px;">hi</span>
+					</div>
+					<div style="position:absolute;bottom:0;">
+				
+					
+							<input class="form-control" type="text" placeholder="Type Something..." style="max-width:100%;">
+						
+					
+				</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
 <!-----------------------------row ends here------------------------------>
 	</div>
 </div>
  	<br><br><br>
-	 <script type="text/javascript" src="db.js" ></script>
+	 <script type="text/javascript" src=".js" ></script>
 <!-----------------------------------------------------------------------navbar for mobile phones------------------------------------>
 <?php
 

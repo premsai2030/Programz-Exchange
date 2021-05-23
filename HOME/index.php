@@ -1,7 +1,7 @@
 <?php 
 include 'connection/db.php';
 include 'connection/all_data.php' ;
-
+include 'most-uploaded.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -82,6 +82,7 @@ else{
     <div id="more">
         <div class="container">
             <div class="row">
+            
                 <div class="col-sm-3">
                     <div class="card">
                         <center>
@@ -102,91 +103,7 @@ else{
                         </center>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>JAVA">
-                                <img src="<?php echo $image_link ;?>j.jpg" style="margin: 10px;width:120px;"">
-                        </a>
-                        <p style=" font-family: 'Montserrat' , sans-serif;color: blue;"><b>Java</b></p>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>PYTHON">
-                                <img src="<?php echo $image_link ;?>p.jpg" style="margin: 10px;width:120px;"">
-                        </a>
-                        <p style=" font-family: 'Montserrat' , sans-serif;color: blue;"><b>Python</b></p>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>ARDUINO">
-                                <img src="<?php echo $image_link ;?>a.jpg" style="margin: 10px;width:120px;">
-                            </a>
-                            <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Arduino</b></p>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>RASPBERRY">
-                                <img src="<?php echo $image_link ;?>r.jpg" style="margin: 10px;width:120px;">
-                            </a>
-                            <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Raspberry Pi</b></p>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>BASIC C">
-                                <img src="<?php echo $image_link ;?>c.jpg" style="margin: 10px;width:120px;">
-                            </a>
-                            <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Basic-C</b></p>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>C++">
-                                <img src="<?php echo $image_link ;?>cpp.jpg" style="margin: 10px;width:120px;">
-                            </a>
-                            <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>CPP</b></p>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>Front End">
-                                <img src="<?php echo $image_link ;?>front.png" style="margin: 30px 0px;width:150px;">
-                            </a>
-                            <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Front end</b></p>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <center>
-                            <a href="<?php echo $home_url ;?>Back End">
-                                <img src="<?php echo $image_link ;?>back.png"
-                                    style="margin: 10px;height:100px;width:120px;"">
-                        </a>
-                        <p style=" font-family: 'Montserrat' , sans-serif;color: blue;"><b>Back End</b></p>
-                        </center>
-                    </div>
-                </div>
+                <?php  echo $blocks; ?>
                 <div class="col-sm-3">
                     <div class="card">
                         <center>
@@ -194,6 +111,7 @@ else{
                                 <img src="<?php echo $image_link ;?>art.jpeg"
                                     style="margin: 10px;width:150px;height:100px;">
                             </a>
+                            <br><br>
                             <p style="font-family: 'Montserrat', sans-serif;color: blue;"><b>Articles</b></p>
                         </center>
                     </div>
