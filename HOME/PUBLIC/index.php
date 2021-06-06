@@ -50,6 +50,8 @@ while ($row=mysqli_fetch_assoc($result)) {
 
 <a href=<?php echo "whatsapp://send?text=http://programz-exchange.epizy.com/share.php?id=".$row["id"].""; ?>  class="fa fa-whatsapp" style="color:green" id="fa1"></a>
 <a href=<?php echo "tg://msg_url?url=http://programz-exchange.epizy.com/share.php?id=".$row["id"]."" ; ?> class="fa fa-telegram" id="fa1" ></a>
+<span title="Copy" style="margin-left:15px;font-size:25px;color:blue;"><i class="fa fa-copy" onclick="copy_code('code'+<?php echo $row['id']; ?>)"></i></span>
+
 
 
 	</div>
@@ -64,7 +66,7 @@ while ($row=mysqli_fetch_assoc($result)) {
               $rows= substr_count($row["source_code"],"\n") +2;
               echo $rows ;
               ?>
-              " style=" resize: none; width: 100%;" disabled="" >
+              " style=" resize: none; width: 100%;"  id="code<?php echo $row["id"]; ?>">
 <?php echo $row["source_code"]; ?>
     </textarea>
  		<center>
@@ -82,6 +84,10 @@ while ($row=mysqli_fetch_assoc($result)) {
   </div>
   <!-- Accordion card -->
 
+  
+
+
+
 </div>
 <!-- Accordion wrapper -->
 
@@ -92,7 +98,14 @@ while ($row=mysqli_fetch_assoc($result)) {
      ?>
  	</div>
  	<br><br><br>
-
+   <script>
+  const copy_code = (val) => 
+  {
+   document.getElementById("code166").select();
+   document.execCommand("copy");
+   alert("Copied the text: " + val);
+  }
+</script>
 <!-----------------------------------------------------------------------navbar for mobile phones------------------------------------>
 <?php
 
