@@ -12,9 +12,13 @@ const upload =() =>{
     }).then(b => b.json()).then(c => {
         if(c.ok) get_all() ;
     });
+    var element = document.getElementById("chat_messages");
+    element.scrollTop = element.scrollHeight;
 };
 
 const get_all = () => {
+    var element = document.getElementById("chat_messages");
+    element.scrollTop = element.scrollHeight;
     const data ={get_id:document.getElementById("get_id").value};
     //console.log(data)
     fetch("messages.php",{
@@ -28,13 +32,16 @@ const get_all = () => {
         {
             
             //console.log(data);
-            let prem = `` ;
+            let messages = `` ;
             for(let i of data)
             {
-                prem += `<div class="card" style="padding: 20px;margin-top:10px;color:grey;"><h3>${i[1]}</h3><p>${i[2]}</p></div>`;
+                if(i[1] === document.getElementById("username").value)
+                messages += `<div class="sender"><div class="chat_message">${i[2]}</div></div>`;
+                else messages += `<div class="receiver"><div class="chat_message">${i[2]}</div></div>`;
             }
-            document.getElementById("data").innerHTML = prem;
+            document.getElementById("chat_messages").innerHTML = messages;
         }
     ) ;
+    
 }
 setInterval(get_all,3000);

@@ -7,6 +7,9 @@ $result=mysqli_query($db,$sql);
 include '../Navbars/headers.php' ;
 
 ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  	<br><br><br><br>
  	<div class="container">
  		
@@ -47,12 +50,12 @@ while ($row=mysqli_fetch_assoc($result)) {
     <div id="links<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
       data-parent="#accordionEx">
       <div class="card-body">
-
+      <?php
+$link = "http://localhost/programz-exchange/share.php?id=".$row["username"]."-".$row["id"]."fhighfignKJBHUVFdfasbgji65f98h7h844JFHSYUGFUS" ;
+?>
 <a href=<?php echo "whatsapp://send?text=http://programz-exchange.epizy.com/share.php?id=".$row["id"].""; ?>  class="fa fa-whatsapp" style="color:green" id="fa1"></a>
 <a href=<?php echo "tg://msg_url?url=http://programz-exchange.epizy.com/share.php?id=".$row["id"]."" ; ?> class="fa fa-telegram" id="fa1" ></a>
-<span title="Copy" style="margin-left:15px;font-size:25px;color:blue;"><i class="fa fa-copy" onclick="copy_code('code'+<?php echo $row['id']; ?>)"></i></span>
-
-
+<a href="<?php echo $link; ?>"style="font-size:20px;margin-left:20px;" target="_blank" ><span class="glyphicon glyphicon-new-window"></span></a>
 
 	</div>
   </div>
