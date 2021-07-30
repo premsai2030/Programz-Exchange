@@ -17,8 +17,7 @@ const upload =() =>{
 };
 
 const get_all = () => {
-    var element = document.getElementById("chat_messages");
-    element.scrollTop = element.scrollHeight;
+    
     const data ={get_id:document.getElementById("get_id").value};
     //console.log(data)
     fetch("messages.php",{
@@ -39,7 +38,12 @@ const get_all = () => {
                 messages += `<div class="sender"><div class="chat_message">${i[2]}</div></div>`;
                 else messages += `<div class="receiver"><div class="chat_message">${i[2]}</div></div>`;
             }
-            document.getElementById("chat_messages").innerHTML = messages;
+            if(document.getElementById("chat_messages").innerHTML !== messages) 
+            {
+                document.getElementById("chat_messages").innerHTML = messages;
+                var element = document.getElementById("chat_messages");
+    element.scrollTop = element.scrollHeight;
+            }
         }
     ) ;
     
