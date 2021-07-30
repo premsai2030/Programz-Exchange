@@ -102,6 +102,10 @@ $link = "http://localhost/programz-exchange/share.php?id=".$row["username"]."-".
  	</div>
  	<br><br><br>
    <script>
+     const scroller = document.body ;
+     scroller.onscroll = () =>{
+       console.log(scroller.scrollHeight);
+     }
   const copy_code = (val) => 
   {
    document.getElementById("code166").select();

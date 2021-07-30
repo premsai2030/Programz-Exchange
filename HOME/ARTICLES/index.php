@@ -1,23 +1,13 @@
 <!-----------------------------------public page-------------------->
 <?php 
-
-$db=mysqli_connect('localhost','root','','prem');
+include '../connection/db.php' ;
+include '../Navbars/headers.php' ;
 $sql="SELECT * FROM article ORDER BY id DESC";
 $result=mysqli_query($db,$sql);
  ?>
- <!DOCTYPE html>
- <html>
- <head>
- 		<title>Login page</title>
- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- </head>
- <body>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  	<style type="text/css">
      p img
      {
@@ -51,63 +41,20 @@ font-size: 10px;
 #close1{
     display: none;
 }
-
-
-
+        }
+        img {
+          max-height:500px;
+          max-width: 100%;
         }
  	</style>
- 	<nav class="navbar-nav fixed-top" style="background-color: black;"> 
-
- 	<div class="row">
- 	<div class="col-sm-3">
- 		<center>
- 			 			    <img src="logo.jpeg" alt="Logo" style="width:290px;height:80px;object-fit:contain;">
-
- 		</center>
- 	</div>
- 	<div class="col-sm-6 ">
- 		<a href="http://programz-exchange.epizy.com/HOME/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;margin-left:30px;color: white;">Home</a>
-<a href="http://programz-exchange.epizy.com/HOME/PUBLIC/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
-Public</a>
-<a  href="http://programz-exchange.epizy.com/HOME/PRIVATE/" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">
-Private</a>
- 		 			 						<a href="http://programz-exchange.epizy.com/LOGOUT" id="close" class="navbar-brand" style="margin-top: 20px;font-size: 17px;color: white;">Logout
-</a>
- 		
- 	</div>
- 		<div class="col-sm-3">
-
- 			<a class="navbar-brand" id="close1" style="float: right;color: white;margin-top: 13px;font-size: 15px;">Welcome <?php echo  "prem sai !" ; ?>  !<br>
-	<?php 
-date_default_timezone_set('Asia/Kolkata');
-$hour=date("H");
-if($hour>=17 && $hour<22){
-	echo "Good Evening";
-}
-elseif($hour>=04 && $hour<12){
-	echo "Good Morning";
-}
-elseif($hour>=12 && $hour<17){
-	echo "Good Afternoon";
-}
-else{
-	echo "It's Already Night";
-}
-
-
- 				 ?>
-    </a>
- 	</div>
- 	</div>		
- 	</nav>
- 	<br><br><br><br>
+<br><br><br><br><br><br>
  	<div class="container">
  		
  		<div class="card" style="padding: 10px;margin-bottom: 10px;">
- 			<center><a href="QUESTION" style="text-decoration: none;"><span><i class="fa fa-plus"></i></span> <span style="font-size: 20px;">Publish an Article </span></a></center>
+ 			<center><a href="create.php" style="text-decoration: none;"><span><i class="fa fa-plus"></i></span> <span style="font-size: 20px;">Publish an Article </span></a></center>
  		</div>
  			<!--Accordion wrapper-->
-<?php 
+       <?php 
 while ($row=mysqli_fetch_assoc($result)) {
  ?>
 
@@ -122,43 +69,57 @@ while ($row=mysqli_fetch_assoc($result)) {
     <div class="card-header" role="tab" id="headingThree3" style="background-color: white">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#<?php echo $row["id"]; ?>"
         aria-expanded="false" aria-controls="collapseThree3" style="text-decoration: none;">
-        <p class="mb-0"  style="color: blue"><b>
-        <?php echo $row["Title"] ; ?>
+        <h4 class="mb-0"  style="color: blue"><b>
+        <?php echo str_replace("\n","<br>",$row["title"]); ?>
 </b>
-        </p>
+        </h4>
 
       </a>
 <div style="margin-top: 10px;">
 	      
 <center>
-<p>Share Via : <a href=<?php echo "whatsapp://send?text=http://programz-exchange.epizy.com/share.php?id=".$row["id"].""; ?>  class="fa fa-whatsapp" style="color:green" id="fa1"></a>
-<a href=<?php echo "tg://msg_url?url=http://programz-exchange.epizy.com/share.php?id=".$row["id"]."" ; ?> class="fa fa-telegram" id="fa1" ></a></p>
+	<span ><a style="float:right;font-size: 25px;" class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#links<?php echo $row["id"]; ?>"
+	aria-expanded="false" aria-controls="collapseThree3"   ><i class="fa fa-share-alt" aria-hidden="true"></i>
+	</a></span>
 </center>
 </div>
     </div>
+    <div id="links<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+      data-parent="#accordionEx">
+      <div class="card-body">
+      <?php
+$link = "http://localhost/programz-exchange/article.php?id=".$row["username"]."-".$row["id"]."fhighfignKJBHUVFdfasbgji65f98h7h844JFHSYUGFUS" ;
+?>
+<a href=<?php echo "whatsapp://send?text=http://programz-exchange.epizy.com/article.php?id=".$row["id"].""; ?>  class="fa fa-whatsapp" style="color:green" id="fa1"></a>
+<a href=<?php echo "tg://msg_url?url=http://programz-exchange.epizy.com/article.php?id=".$row["id"]."" ; ?> class="fa fa-telegram" id="fa1" ></a>
+<a href="<?php echo $link; ?>"style="font-size:20px;margin-left:20px;" target="_blank" ><span class="glyphicon glyphicon-new-window"></span></a>
 
+	</div>
+  </div>
     <!-- Card body -->
     <div id="<?php echo $row["id"]; ?>" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
       data-parent="#accordionEx">
       <div class="card-body">
-		  <hr>
-<p><?php echo $row["preview"] ; ?></p>
-<hr>
-  
  		<center>
+<?php echo str_replace("\n","<br>",$row["article"]); ?>
+<hr>
  			<div style="padding: 10px;">
- 					<a href="EDIT?id=<?php echo $row["id"]; ?>"  style="width: 60px;margin-right: 30px;font-size: 15px;text-decoration:none;">Edit</a>
- 			<a href="post_delete.php?id=<?php echo $row["id"]; ?>&location=<?php echo "http://programz-exchange.epizy.com/HOME/PUBLIC/"; ?>"  style="font-size: 15px;color:red;text-decoration:none;">Delete</a>
+ 					<a href="edit.php?id=<?php echo $row["id"]; ?>" class="btn btn-primary" style="width: 60px;margin-right: 30px;font-size: 13px">Edit</a>
+ 			<a href="delete_article.php?id=<?php echo $row["id"]; ?>" class="btn btn-danger" style="font-size: 13px;">Delete</a>
 
  			</div>
  	
- 		<span><b>posted on : </b><?php echo $row["time1"]; ?></span>
+ 		<span><b>posted on : </b><?php echo $row["date_"]; ?></span>
  		</center>
       </div>
    
 
   </div>
   <!-- Accordion card -->
+
+  
+
+
 
 </div>
 <!-- Accordion wrapper -->
@@ -204,6 +165,6 @@ Private</a>
   </div>
 </nav>
 </div>
-
+<?php include '../Navbars/footer.php' ;?>
  </body>
  </html>
